@@ -91,6 +91,28 @@ public class AddProductActivity extends AppCompatActivity {
                 }
             }
         });
+        Button addQuan = (Button) findViewById(R.id.add_quan);
+        addQuan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EditText ed = (EditText) findViewById(R.id.quantity);
+                int x = Integer.parseInt(ed.getText().toString());
+                x++;
+                ed.setText(Integer.toString(x));
+            }
+        });
+
+        Button subQuan = (Button) findViewById(R.id.sub_quan);
+        subQuan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EditText ed = (EditText) findViewById(R.id.quantity);
+                int x = Integer.parseInt(ed.getText().toString());
+                if(x > 0)
+                x--;
+                ed.setText(Integer.toString(x));
+            }
+        });
 
     }
 }
